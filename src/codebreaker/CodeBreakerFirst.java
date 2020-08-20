@@ -43,6 +43,7 @@ public class CodeBreakerFirst {
 				shown_answer += answer[i];
 			}
 			System.out.println("答えは " + shown_answer);
+			System.out.println();
 
 		//ゲーム
 		while(true) {
@@ -60,12 +61,7 @@ public class CodeBreakerFirst {
 					i--;
 				}
 			}
-				//入力した数値を表示
-				String shown_input = "";
-				for(int i=0;i<input.length;i++) {
-					shown_input += input[i];
-				}
-				System.out.println("あなたの選んだ数字は " + shown_input);
+			System.out.println();
 
 			//答えの判断
 			hit = 0;
@@ -80,8 +76,21 @@ public class CodeBreakerFirst {
 				}
 			}
 
-			//判断の表示
-			System.out.println("ヒット : " + hit + " | ブロー : " + blow);
+			//終了の判断
+			if (hit == 3) {
+				System.out.println("おめでとうございます！クリアです！");
+				System.out.println("正解は" + shown_answer + "でした！");
+				System.out.println(count + "回目でのクリアです");
+				break;
+			}else {
+				String shown_input = "";
+				for(int i=0;i<input.length;i++) {
+					shown_input += input[i];
+				}
+				System.out.println("入力した数字 :  " + shown_input);
+				System.out.println("ヒット : " + hit + " | ブロー : " + blow);
+				System.out.println();
+			}
 		}
 
 	}
