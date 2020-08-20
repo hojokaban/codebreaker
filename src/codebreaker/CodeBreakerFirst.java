@@ -1,6 +1,7 @@
 package codebreaker;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class CodeBreakerFirst {
@@ -36,12 +37,36 @@ public class CodeBreakerFirst {
 				}
 			} while(flag);
 		}
-
 		//答えを表示
 		String shown_answer = "";
 		for(int i=0;i<answer.length;i++) {
 			shown_answer += answer[i];
 		}
-		System.out.println(shown_answer);
+		System.out.println("答えは " + shown_answer);
+
+		//ゲーム
+		while(true) {
+			count++;
+			System.out.println("***" + count + "回目***");
+			for(int i=0;i<answer.length;i++) {
+				System.out.print( (i+1) + "個目 : ");
+				try {
+					input[i] = Integer.parseInt(br.readLine());
+				}catch(NumberFormatException e) {
+					System.err.println("数値を入力してください");
+					i--;
+				}catch(IOException e) {
+					System.err.println("もう一度入力してください");
+					i--;
+				}
+			}
+			//入力した数値を表示
+			String shown_input = "";
+			for(int i=0;i<input.length;i++) {
+				shown_input += input[i];
+			}
+			System.out.println("あなたの選んだ数字は " + shown_input);
+		}
+
 	}
 }
