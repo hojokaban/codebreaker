@@ -37,12 +37,12 @@ public class CodeBreakerFirst {
 				}
 			} while(flag);
 		}
-		//答えを表示
-		String shown_answer = "";
-		for(int i=0;i<answer.length;i++) {
-			shown_answer += answer[i];
-		}
-		System.out.println("答えは " + shown_answer);
+			//答えを表示
+			String shown_answer = "";
+			for(int i=0;i<answer.length;i++) {
+				shown_answer += answer[i];
+			}
+			System.out.println("答えは " + shown_answer);
 
 		//ゲーム
 		while(true) {
@@ -60,12 +60,28 @@ public class CodeBreakerFirst {
 					i--;
 				}
 			}
-			//入力した数値を表示
-			String shown_input = "";
-			for(int i=0;i<input.length;i++) {
-				shown_input += input[i];
+				//入力した数値を表示
+				String shown_input = "";
+				for(int i=0;i<input.length;i++) {
+					shown_input += input[i];
+				}
+				System.out.println("あなたの選んだ数字は " + shown_input);
+
+			//答えの判断
+			hit = 0;
+			blow = 0;
+			for(int i=0;i<answer.length;i++) {
+				for(int j=0;j<answer.length;j++) {
+					if(i == j && input[i] == answer[j]) {
+						hit++;
+					}else if(input[i] == answer[j]) {
+						blow++;
+					}
+				}
 			}
-			System.out.println("あなたの選んだ数字は " + shown_input);
+
+			//判断の表示
+			System.out.println("ヒット : " + hit + " | ブロー : " + blow);
 		}
 
 	}
