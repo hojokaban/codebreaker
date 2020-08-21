@@ -42,8 +42,8 @@ public class CodeBreakerFirst {
 			for(int i=0;i<answer.length;i++) {
 				shown_answer += answer[i];
 			}
-			System.out.println("答えは " + shown_answer);
-			System.out.println();
+//			System.out.println("答えは " + shown_answer);
+//			System.out.println();
 
 		//ゲーム
 		while(true) {
